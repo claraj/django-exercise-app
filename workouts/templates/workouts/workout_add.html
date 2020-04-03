@@ -1,0 +1,18 @@
+{% extends 'workouts/base.html' %}
+{% load static %}
+{% block content %}
+
+<h3>Add new workout</h3>
+
+{% for err in messages.error %}
+    <p class="error">{{ err }}</p>
+{% endfor %}
+
+<form method="POST" action="{% url 'workout_add' %}">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save!</button>
+</form>
+
+
+{% endblock %}

@@ -1,0 +1,67 @@
+
+{% extends 'workouts/base.html' %}
+{% load static %}
+{% block content %}
+
+<h2>Exercise List</h2>
+
+<a id="floating-add" href="{% url 'workout_add' %}">
+    <button>Add new!</button>
+</a>
+
+
+<div>
+    <form method="GET" action="{% url 'workout_list' %}">
+        {{ search_form }}
+        <button>Search</button>
+    </form>
+
+    <a href="{% url 'workout_list' %}">
+        <button>See all</button>
+    </a>
+    
+</div>
+
+{% if search_term %}
+    <h3>Searching for "{{ search_term }}" </h3>
+{% endif %}
+
+{% for exercise in exercises %}
+
+<div class="card">
+    <header>
+    <h3>{{ exercise.name}}</h3>
+    </header>
+    
+    <p>Focus: {{ exercise.focus }}</p>
+    
+    <p>You think: 
+        {% if exercise.like %} 
+        <img src="{% static 'img/like.png' %}">
+        {% elif exercise.like is False %}
+        <img src="{% static 'img/dislike.png' %}">
+        {% else %}
+        <p>Not rated</p> 
+        {% endif %}
+    </p>
+
+    <iframe width="420" height="315"
+    src="https://www.youtube.com/embed/{{exercise.video_id}}?autoplay=1"}>
+    </iframe>
+
+    <a class="card-link" href="{% url 'workout_detail' pk=exercise.pk %}">
+        <button class="more-info">More info</button>
+    </a>
+</div>
+
+{% empty %}
+
+<h4>No exercises!</h4>
+
+{% endfor %}
+
+<hr>
+
+<p>Icons made by <a href="https://www.flaticon.com/authors/freepik" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
+<p>Icons made by <a href="https://www.flaticon.com/authors/smashicons" title="Smashicons">Smashicons</a> from <a href="https://www.flaticon.com/" title="Flaticon"> www.flaticon.com</a></p>
+{% endblock %}

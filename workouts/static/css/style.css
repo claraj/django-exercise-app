@@ -1,0 +1,38 @@
+body {
+    background-color: lightgray;
+}
+
+.card {
+    margin: 20px 0px 20px 0px;
+    padding: 10px;
+    border: 1px solid darkolivegreen;
+    border-radius: 5px;
+    background-color: #c0e3e0;
+    box-shadow: 4px 4px 10px 5px  darkslategray;
+}
+
+.error {
+    color: red;
+    font-weight: bold;
+}
+
+.more-info {
+    margin: 10px;
+}
+
+button.delete {
+    background-color: crimson;
+    color: blanchedalmond;
+}
+
+#floating-add {
+    position: fixed;
+    top: 20px;
+    right: 10px;
+}
+
+#floating-add > button {
+    background-color: fuchsia;
+    color: black;
+}
+

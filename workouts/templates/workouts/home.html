@@ -1,0 +1,15 @@
+{% extends 'workouts/base.html' %}
+{% block content %}
+
+<h3>Choices</h3>
+
+<p>
+<a href="{% url 'workout_list' %}">See all workouts</a>
+</p>
+
+<p>
+<a href="{% url 'workout_add' %}">Add new workout</a>
+</p>
+
+
+{% endblock %}
