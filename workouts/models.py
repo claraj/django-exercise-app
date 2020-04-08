@@ -1,5 +1,4 @@
 from django.db import models
-from django.core.validators import MaxValueValidator
 
 # Create your models here.
 
@@ -10,5 +9,5 @@ class Exercise(models.Model):
     video_id = models.CharField(max_length=100)   # Youtube video ID
     
     def __str__(self):
-        return f'{self.name=} {self.focus=} {self.rating=} {self.video_id=} '
+        return f'{self.name=} {self.focus=} {self.like=} {self.video_id=} '
 
