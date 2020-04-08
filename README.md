@@ -3,7 +3,7 @@
 
 - Create virtualenv and install django
 
-- django-admin startproject exercise_app
+- django-admin startproject exercise_proj
 
 - python manage.py startapp workouts
 
@@ -25,14 +25,14 @@
 
 - Create new workouts/urls.py
 
-- Add line to exercise_app/urls.py to include new workouts/urls.py routes
+- Add line to exercise_proj/urls.py to include new workouts/urls.py routes
 
-- Create new URL path in exercise_app/urls.py to show workout list for '/'
+- Create new URL path in exercise_proj/urls.py to show workout list for '/'
 
 
 ## Views and templates 
 
-- Create new function in exercise_app/views.py to handle request 
+- Create new function in exercise_proj/views.py to handle request 
 
 - Create new template  workouts/templates/workout_list for list of all workouts 
 

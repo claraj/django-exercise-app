@@ -5,7 +5,6 @@ from django.http import HttpResponseNotAllowed
 from django.contrib import messages
 from django.db.models import Q
 
-# Create your views here.
 
 def workout_home(request):
     return render(request, 'workouts/home.html')
@@ -16,9 +15,7 @@ def workout_list(request):
     search_form = SearchForm(request.GET)
     search_term = ''
 
-    print(search_form.is_valid())
     if search_form.is_valid():
-
         search_term = search_form.cleaned_data['search_term']
         all_exercises = Exercise.objects.filter(name__icontains=search_term)
 
@@ -67,7 +64,7 @@ def workout_add(request):
             return redirect('workout_add')
     else:      
         new_exercise_form = ExerciseForm()
-        return render(request, 'workouts/workout_add.html', {'form':new_exercise_form })
+        return render(request, 'workouts/workout_add.html', {'form': new_exercise_form })
     
 
 
