@@ -12,7 +12,7 @@
 
 ## Models
 
-- Create model in workouts/models.py. Notice use of max validator, format string variables with {var=} to print the variable name plus it's value 
+- Create model in workouts/models.py. Notice format string variables with {var=} to print the variable name plus it's value. This was introduced in Python 3.8 so remove the = if using Python 3.7 or earlier, or you'll get errors with this syntax. 
 
 - Register model in workouts/admin.py.  Not required but makes it easier to see what's in your DB
 
